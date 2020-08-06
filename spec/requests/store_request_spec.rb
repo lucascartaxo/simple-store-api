@@ -5,7 +5,7 @@ RSpec.describe "Stores", type: :request do
 
   describe "GET #index" do
     it "retrieves a list of stores" do
-      get api_v1_store_index_path
+      get "/api/v1/stores"
       expect(response.body).to match(StoreSerializer.new(Store.all).to_json)
     end
   end

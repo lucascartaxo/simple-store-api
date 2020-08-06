@@ -1,4 +1,4 @@
-class  Api::V1::StoreController < ApplicationController
+class  Api::V1::StoresController < ApplicationController
   before_action :load_stores
   
   def index
