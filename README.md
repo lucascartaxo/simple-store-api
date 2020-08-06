@@ -22,3 +22,10 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+## FUNCIONALIDADES
+* Cadastrar, alterar, excluir e pesquisar produto (apenas por ID)
+* Cadastrar, alterar, excluir e pesquisar loja (apenas por ID)
+* Criar estoque de um produto em uma loja (relacionar loja e produto e inserir uma quantidade  inicial de itens)
+* Adicionar itens de um produto ao estoque
+* Retirar itens de um produto do estoque
