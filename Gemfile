@@ -8,6 +8,7 @@ gem 'pg'
 gem 'unicorn'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'fast_jsonapi'
+gem 'money'
 
 group :development, :test do
   gem 'pry'  
