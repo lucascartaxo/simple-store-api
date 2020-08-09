@@ -18,6 +18,7 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'simplecov'
   gem 'simplecov-shields-badge'
+  gem 'annotate'
 end
 
 group :development do
