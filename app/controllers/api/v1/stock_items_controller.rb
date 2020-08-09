@@ -1,4 +1,4 @@
-class Api::V1::StockItemsController < ApplicationController
+class Api::V1::StockItemsController < Api::V1::BaseController
 
   before_action :set_stock_item, only: [:show, :update, :destroy]
 
