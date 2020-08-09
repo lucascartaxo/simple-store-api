@@ -1,7 +1,7 @@
 [![Image caption](https://miro.medium.com/max/2628/1*YZ5M_FjF8QNdtPGn4eMEgA.png)](#)
 
 # SIMPLE-STORE-API
-
+[![Coverage](https://github.com/lucascartaxo/simple-store-api/blob/master/badge.svg)](https://github.com/lucascartaxo/simple-store-api)
 
 ### INSTALLATION
 
