@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :stores
       resources :products
+      resources :stock_items
     end
   end
 end
