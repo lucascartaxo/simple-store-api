@@ -18,19 +18,21 @@ $ git clone git@github.com:lucascartaxo/simple-store-api.git
 $ cd simple-store-api
 ```
 
+don't forget to
+
+```sh
+$ docker-compose up
+```
+
 and then
 
 ```sh
 $ bundle install
 $ rake db:create:all
 $ rake db:migrate
+$ rake db:seed
 ```
 
-don't forget to
-
-```sh
-$ docker-compose up -d
-```
 Run the specs with
 
 ```sh
