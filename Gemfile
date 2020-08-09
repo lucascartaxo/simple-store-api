@@ -11,11 +11,12 @@ gem 'fast_jsonapi'
 gem 'money'
 
 group :development, :test do
-  gem 'pry'  
+  gem 'pry'
   gem 'rspec-rails'
   gem 'faker'
   gem 'shoulda-matchers'
   gem 'factory_bot_rails'
+  gem 'simplecov'
 end
 
 group :development do
