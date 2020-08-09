@@ -2,39 +2,43 @@
 
 # SIMPLE-STORE-API
 
-## GETTING STARTED
+
+### INSTALLATION
+
+Some prerequisites for this app
 ```
 ruby 2.7.1
 Docker
 ```
 
-### INSTALLATION
+In order to have this app up and running, just
 ```sh
 $ git clone git@github.com:lucascartaxo/simple-store-api.git
-```
-
-```sh
 $ cd simple-store-api
 ```
 
+and then
+
 ```sh
 $ bundle install
+$ rake db:create:all
+$ rake db:migrate
 ```
+
+don't forget to
 
 ```sh
 $ docker-compose up -d
 ```
-
-```sh
-$ rake db:create:all
-$ rake db:migrate
-```
+Run the specs with
 
 ```sh
 $ rspec spec/
 ```
 
 ## API
+This is the documentation regarding all the app routes
+
 ### CREATE STORE
 ```sh
 $ curl --header "Content-Type: application/json" --request POST --data '{"name":"store-001","address":"123 Oz"}' https://simple-store-rails-api.herokuapp.com/api/v1/stores.json
@@ -88,7 +92,7 @@ $ curl --header "Content-Type: application/json" --request DELETE https://simple
 > 404 (not found)
 ```
 
-<br/><br/>
+<br/><hr/><br/>
 
 ### CREATE PRODUCT
 ```sh
@@ -143,7 +147,7 @@ $ curl --header "Content-Type: application/json" --request DELETE https://simple
 > 404 (not found)
 ```
 
-<br/><br/>
+<br/><hr/><br/>
 
 ### CREATE STOCK ITEM
 ```sh
@@ -197,7 +201,6 @@ $ curl --header "Content-Type: application/json" --request DELETE https://simple
 # failure
 > 404 (not found)
 ```
-
 
 ## PRODUCTION STATUS & SUPPORT
 This project is hosted via Heroku, and it is available on this link:
