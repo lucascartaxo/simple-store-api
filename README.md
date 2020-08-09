@@ -82,29 +82,169 @@ $ rspec spec/
 ## API
 [a]: #api 'Module\'s API description'
 
-* Cadastrar, alterar, excluir e pesquisar produto (apenas por ID)
-* Cadastrar, alterar, excluir e pesquisar loja (apenas por ID)
-* Criar estoque de um produto em uma loja (relacionar loja e produto e inserir uma quantidade  inicial de itens)
-* Adicionar itens de um produto ao estoque
-* Retirar itens de um produto do estoque
+### CREATE STORE
+```sh
+$ curl --header "Content-Type: application/json" --request POST --data '{"name":"store-001","address":"123 Oz"}' https://simple-store-rails-api.herokuapp.com/api/v1/stores.json
 
-|FUNCIONALIDADE|cURL (exemplo) |
-|----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| CADASTRAR LOJA | curl --header "Content-Type: application/json" --request POST --data '{"name":"store-001","address":"123 Oz"}' https://simple-store-rails-api.herokuapp.com/api/v1/stores.json |
-| LISTAR LOJAS   | curl --header "Content-Type: application/json" --request GET https://simple-store-rails-api.herokuapp.com/api/v1/stores.json |
-| EDITAR LOJA    | curl --header "Content-Type: application/json" --request PUT --data '{"name":"new-store-001"}' https://simple-store-rails-api.herokuapp.com/api/v1/stores/1.json |
-| EXCLUIR LOJA   | curl --header "Content-Type: application/json" --request DELETE https://simple-store-rails-api.herokuapp.com/api/v1/stores/1.json |
-|<br/>|<br/>|
-| CADASTRAR PRODUTO | curl --header "Content-Type: application/json" --request POST --data '{"name":"product-001","price_cents":"999"}' https://simple-store-rails-api.herokuapp.com/api/v1/products.json |
-| LISTAR PRODUTOS   | curl --header "Content-Type: application/json" --request GET https://simple-store-rails-api.herokuapp.com/api/v1/products.json |
-| EDITAR PRODUTO    | curl --header "Content-Type: application/json" --request PUT --data '{"name":"new-store-001"}' https://simple-store-rails-api.herokuapp.com/api/v1/products/1.json |
-| EXCLUIR PRODUTO   | curl --header "Content-Type: application/json" --request DELETE https://simple-store-rails-api.herokuapp.com/api/v1/products/1.json |
-|<br/>|<br/>|
-| CADASTRAR ITEM | curl --header "Content-Type: application/json" --request POST --data '{"store_id":"1","product_id": "1", quantity":"999"}' https://simple-store-rails-api.herokuapp.com/api/v1/stock_items.json |
-| LISTAR ITEM   | curl --header "Content-Type: application/json" --request GET https://simple-store-rails-api.herokuapp.com/api/v1/stock_items.json |
-| EDITAR ITEM    | curl --header "Content-Type: application/json" --request PUT --data '{"quantity":"1"}' https://simple-store-rails-api.herokuapp.com/api/v1/stock_items/1.json |
-| EXCLUIR ITEM   | curl --header "Content-Type: application/json" --request DELETE https://simple-store-rails-api.herokuapp.com/api/v1/stock_items/1.json |
-|<br/>|<br/>|
+# success
+> 201 (created)
+
+# failure
+> 422 (unprocessable entity)
+```
+
+### GET STORE
+```sh
+$ curl --header "Content-Type: application/json" --request GET https://simple-store-rails-api.herokuapp.com/api/v1/stores/1.json
+
+# success
+> 200 (ok)
+
+# failure
+> 404 (not found)
+```
+
+### LIST STORES
+```sh
+$ curl --header "Content-Type: application/json" --request GET https://simple-store-rails-api.herokuapp.com/api/v1/stores.json
+
+# success
+> 200 (ok)
+```
+
+### EDIT STORES
+```sh
+$ curl --header "Content-Type: application/json" --request PUT --data '{"name":"new-store-001"}' https://simple-store-rails-api.herokuapp.com/api/v1/stores/1.json
+
+# success
+> 204 (no content)
+
+# failure
+> 404 (not found)
+> 422 (unprocessable entity)
+```
+
+### DELETE STORE
+```sh
+$ curl --header "Content-Type: application/json" --request DELETE https://simple-store-rails-api.herokuapp.com/api/v1/stores/1.json
+
+# success
+> 204 (no content)
+
+# failure
+> 404 (not found)
+```
+
+<br/><br/>
+
+### CREATE PRODUCT
+```sh
+$ curl --header "Content-Type: application/json" --request POST --data '{"name":"product-001","price_cents":"999"}' https://simple-store-rails-api.herokuapp.com/api/v1/products.json
+
+# success
+> 201 (created)
+
+# failure
+> 422 (unprocessable entity)
+```
+
+### GET PRODUCT
+```sh
+$ curl --header "Content-Type: application/json" --request GET https://simple-store-rails-api.herokuapp.com/api/v1/products/1.json
+
+# success
+> 200 (ok)
+
+# failure
+> 404 (not found)
+```
+
+### LIST PRODUCTS
+```sh
+$ curl --header "Content-Type: application/json" --request GET https://simple-store-rails-api.herokuapp.com/api/v1/products.json
+
+# success
+> 200 (ok)
+```
+
+### EDIT PRODUCTS
+```sh
+$ curl --header "Content-Type: application/json" --request PUT --data '{"name":"new-product-001"}' https://simple-store-rails-api.herokuapp.com/api/v1/products/1.json
+
+# success
+> 204 (no content)
+
+# failure
+> 404 (not found)
+> 422 (unprocessable entity)
+```
+
+### DELETE PRODUCT
+```sh
+$ curl --header "Content-Type: application/json" --request DELETE https://simple-store-rails-api.herokuapp.com/api/v1/products/1.json
+
+# success
+> 204 (no content)
+
+# failure
+> 404 (not found)
+```
+
+<br/><br/>
+
+### CREATE STOCK ITEM
+```sh
+$ curl --header "Content-Type: application/json" --request POST --data '{"store_id":"1","product_id": "1", quantity":"999"}' https://simple-store-rails-api.herokuapp.com/api/v1/stock_items.json
+
+# success
+> 201 (created)
+
+# failure
+> 422 (unprocessable entity)
+```
+
+### GET STOCK ITEM
+```sh
+$ curl --header "Content-Type: application/json" --request GET https://simple-store-rails-api.herokuapp.com/api/v1/stock_items/1.json
+
+# success
+> 200 (ok)
+
+# failure
+> 404 (not found)
+```
+
+### LIST STOCK ITEMS
+```sh
+$ curl --header "Content-Type: application/json" --request GET https://simple-store-rails-api.herokuapp.com/api/v1/stock_items.json
+
+# success
+> 200 (ok)
+```
+
+### EDIT STOCK ITEMS
+```sh
+$ curl --header "Content-Type: application/json" --request PUT --data '{"name":"new-product-001"}' https://simple-store-rails-api.herokuapp.com/api/v1/stock_items/1.json
+
+# success
+> 204 (no content)
+
+# failure
+> 404 (not found)
+> 422 (unprocessable entity)
+```
+
+### DELETE STOCK ITEM
+```sh
+$ curl --header "Content-Type: application/json" --request DELETE https://simple-store-rails-api.herokuapp.com/api/v1/stock_items/1.json
+
+# success
+> 204 (no content)
+
+# failure
+> 404 (not found)
+```
+
 
 ## PRODUCTION STATUS & SUPPORT
 [ps]: #production-status--support 'Production use disclaimer & support info'
