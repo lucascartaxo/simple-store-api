@@ -1,3 +1,4 @@
+
 # README
 
 This README would normally document whatever steps are necessary to get the
@@ -23,7 +24,64 @@ Things you may want to cover:
 
 * ...
 
-## FUNCIONALIDADES
+
+
+=================================================================================
+
+
+<!-- [![Image caption](/https://miro.medium.com/max/2628/1*YZ5M_FjF8QNdtPGn4eMEgA.png.jpg)](#) -->
+
+[![Image caption](/https://miro.medium.com/max/2628/1*YZ5M_FjF8QNdtPGn4eMEgA.png.jpg)](#)
+
+# PROJECT
+[d]: #project
+**[INSTALL][i] | [USAGE][u] | [API][a] | [AUTHOR][auth] | [CONTRIBUTE][cpl] | [LICENSE][cpl] | [SUPPORT][ps]**
+
+```
+```
+
+```
+```
+
+## GETTING STARTED
+[gt]: #getting-started 'Getting started guide'
+
+```
+ruby 2.7.1
+Docker
+```
+
+### INSTALLATION
+[i]: #installation 'Installation guide'
+
+```sh
+$ git clone git@github.com:lucascartaxo/simple-store-api.git
+```
+
+```sh
+$ cd simple-store-api
+```
+
+```sh
+$ bundle install
+```
+
+```sh
+$ docker-compose up -d
+```
+
+```sh
+$ rake db:create:all
+$ rake db:migrate
+```
+
+```sh
+$ rspec spec/
+```
+
+## API
+[a]: #api 'Module\'s API description'
+
 * Cadastrar, alterar, excluir e pesquisar produto (apenas por ID)
 * Cadastrar, alterar, excluir e pesquisar loja (apenas por ID)
 * Criar estoque de um produto em uma loja (relacionar loja e produto e inserir uma quantidade  inicial de itens)
@@ -47,3 +105,14 @@ Things you may want to cover:
 | EDITAR ITEM    | curl --header "Content-Type: application/json" --request PUT --data '{"quantity":"1"}' https://simple-store-rails-api.herokuapp.com/api/v1/stock_items/1.json |
 | EXCLUIR ITEM   | curl --header "Content-Type: application/json" --request DELETE https://simple-store-rails-api.herokuapp.com/api/v1/stock_items/1.json |
 |<br/>|<br/>|
+
+## PRODUCTION STATUS & SUPPORT
+[ps]: #production-status--support 'Production use disclaimer & support info'
+
+This project is hosted via Heroku, and it is available on this link:
+
+http://simple-store-rails-api.herokuapp.com
+
+<hr>
+
+Go back to the **[project description][d]**
