@@ -21,13 +21,15 @@ class Api::V1::StockItemsController < Api::V1::BaseController
 
   # PUT /api/v1/stock_items.json/:id
   def update
-    @stock_item.update(stock_item_params)
+    StockItem.transaction do
+      @stock_item.update!(stock_item_params)
+    end
     head :no_content
   end
 
   # DELETE /api/v1/stock_items.json/:id
   def destroy
-    @stock_item.destroy
+    @stock_item.destroy!
     head :no_content
   end
 
