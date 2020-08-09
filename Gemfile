@@ -9,11 +9,11 @@ gem 'unicorn'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'fast_jsonapi'
 gem 'money'
+gem 'faker'
 
 group :development, :test do
   gem 'pry'
   gem 'rspec-rails'
-  gem 'faker'
   gem 'shoulda-matchers'
   gem 'factory_bot_rails'
   gem 'simplecov'
