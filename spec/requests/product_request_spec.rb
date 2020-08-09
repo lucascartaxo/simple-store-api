@@ -5,7 +5,7 @@ RSpec.describe "Products", type: :request do
   let(:product_id) { products.first.id }
 
   describe "GET /api/v1/products" do
-    before { get "/api/v1/products" }
+    before { get "/api/v1/products.json" }
 
     it "returns products" do
       expect(json).not_to be_empty
@@ -19,7 +19,7 @@ RSpec.describe "Products", type: :request do
   end
 
   describe "GET /api/v1/products/:id" do
-    before { get "/api/v1/products/#{product_id}" }
+    before { get "/api/v1/products/#{product_id}.json" }
 
     context "when the record exists" do
       it "returns the product" do
@@ -49,7 +49,7 @@ RSpec.describe "Products", type: :request do
     let(:valid_attributes) { { name: "cap", price_cents: "999" } }
 
     context "when the request is valid" do
-      before { post "/api/v1/products", params: valid_attributes }
+      before { post "/api/v1/products.json", params: valid_attributes }
 
       it "creates a product" do
         expect(json["data"]["attributes"]["name"]).to eq("cap")
@@ -61,7 +61,7 @@ RSpec.describe "Products", type: :request do
     end
 
     context "when the request is invalid" do
-      before { post "/api/v1/products", params: { foo: "bar" } }
+      before { post "/api/v1/products.json", params: { foo: "bar" } }
 
       it "returns status code 422" do
         expect(response).to have_http_status(422)
@@ -78,7 +78,7 @@ RSpec.describe "Products", type: :request do
     let(:valid_attributes) { { name: "hat" } }
 
     context "when the record exists" do
-      before { put "/api/v1/products/#{product_id}", params: valid_attributes }
+      before { put "/api/v1/products/#{product_id}.json", params: valid_attributes }
 
       it "updates the record" do
         expect(response.body).to be_empty
@@ -91,7 +91,7 @@ RSpec.describe "Products", type: :request do
   end
 
   describe "DELETE /api/v1/products/:id" do
-    before { delete "/api/v1/products/#{product_id}" }
+    before { delete "/api/v1/products/#{product_id}.json" }
 
     it "returns status code 204" do
       expect(response).to have_http_status(204)

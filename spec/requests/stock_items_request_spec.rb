@@ -5,7 +5,7 @@ RSpec.describe "Stock Items", type: :request do
   let(:stock_item_id) { stock_items.first.id }
 
   describe "GET /api/v1/stock_items" do
-    before { get "/api/v1/stock_items" }
+    before { get "/api/v1/stock_items.json" }
 
     it "returns stock_items" do
       expect(json).not_to be_empty
@@ -19,7 +19,7 @@ RSpec.describe "Stock Items", type: :request do
   end
 
   describe "GET /api/v1/stock_items/:id" do
-    before { get "/api/v1/stock_items/#{stock_item_id}" }
+    before { get "/api/v1/stock_items/#{stock_item_id}.json" }
 
     context "when the record exists" do
       it "returns the stock_item" do
@@ -51,7 +51,7 @@ RSpec.describe "Stock Items", type: :request do
     let(:valid_attributes) { { store_id: store.id, product_id: product.id, quantity: 10 } }
 
     context "when the request is valid" do
-      before { post "/api/v1/stock_items", params: valid_attributes }
+      before { post "/api/v1/stock_items.json", params: valid_attributes }
 
       it "creates a stock_item" do
         expect(json["data"]["attributes"]["quantity"]).to eq(10)
@@ -65,7 +65,7 @@ RSpec.describe "Stock Items", type: :request do
     end
 
     context "when the request is invalid" do
-      before { post "/api/v1/stock_items", params: { foo: "bar" } }
+      before { post "/api/v1/stock_items.json", params: { foo: "bar" } }
 
       it "returns status code 422" do
         expect(response).to have_http_status(422)
@@ -82,7 +82,7 @@ RSpec.describe "Stock Items", type: :request do
     let(:valid_attributes) { { name: "hat" } }
 
     context "when the record exists" do
-      before { put "/api/v1/stock_items/#{stock_item_id}", params: valid_attributes }
+      before { put "/api/v1/stock_items/#{stock_item_id}.json", params: valid_attributes }
 
       it "updates the record" do
         expect(response.body).to be_empty
@@ -95,7 +95,7 @@ RSpec.describe "Stock Items", type: :request do
   end
 
   describe "DELETE /api/v1/stock_items/:id" do
-    before { delete "/api/v1/stock_items/#{stock_item_id}" }
+    before { delete "/api/v1/stock_items/#{stock_item_id}.json" }
 
     it "returns status code 204" do
       expect(response).to have_http_status(204)

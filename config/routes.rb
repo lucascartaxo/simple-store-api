@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  namespace :api do
+  namespace :api, constraints: lambda { |request| request.format == :json }do
     namespace :v1 do
       resources :stores
       resources :products
