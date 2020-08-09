@@ -6,6 +6,8 @@
           1,
           null,
           1,
+          2,
+          null,
           1,
           1,
           null,
@@ -16,10 +18,21 @@
           null,
           null,
           1,
-          2,
+          1,
+          1,
+          null,
+          null,
           null,
           1,
           1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          2,
+          null,
           null,
           null,
           null
@@ -28,6 +41,8 @@
       "/Users/lucascartaxo/Developer/ruby/simple-store-api/app/models/product.rb": {
         "lines": [
           1,
+          1,
+          null,
           1,
           null,
           1,
@@ -60,6 +75,14 @@
           2,
           null,
           null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
           null
         ]
       },
@@ -69,6 +92,7 @@
           1,
           1,
           null,
+          1,
           1,
           null
         ]
@@ -89,12 +113,27 @@
           2,
           null,
           null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          2,
+          null,
+          null,
+          null,
+          null,
           null
         ]
       },
       "/Users/lucascartaxo/Developer/ruby/simple-store-api/app/models/store.rb": {
         "lines": [
           1,
+          1,
+          null,
           1,
           null
         ]
@@ -670,6 +709,6 @@
         ]
       }
     },
-    "timestamp": 1597006681
+    "timestamp": 1597007580
   }
 }

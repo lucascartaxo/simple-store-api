@@ -12,5 +12,13 @@ RSpec.describe StockItem, type: :model do
     it { is_expected.to belong_to(:store) }
     it { is_expected.to belong_to(:product) }
   end
-  
+
+  describe "quantity" do
+    it "is greater or equal than zero" do
+      expect {
+        create(:stock_item, quantity: -1)
+      }.to raise_error(ActiveRecord::RecordInvalid)
+    end
+  end
+
 end
