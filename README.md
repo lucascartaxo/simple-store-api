@@ -30,7 +30,7 @@ Things you may want to cover:
 * Adicionar itens de um produto ao estoque
 * Retirar itens de um produto do estoque
 
-| ACAO           | CURL                                                                                                                                                                           |
+|FUNCIONALIDADE|cURL (exemplo) |
 |----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | CADASTRAR LOJA | curl --header "Content-Type: application/json" --request POST --data '{"name":"store-001","address":"123 Oz"}' https://simple-store-rails-api.herokuapp.com/api/v1/stores.json |
 | LISTAR LOJAS   | curl --header "Content-Type: application/json" --request GET https://simple-store-rails-api.herokuapp.com/api/v1/stores.json |
